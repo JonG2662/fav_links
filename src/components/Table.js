@@ -27,19 +27,18 @@ const TableBody = (props) => {
           <button onClick={() => props.removeLink(index)}>Delete</button>
         </td>
       </tr>
-    )
-  })
-
+    );
+  });
   return <tbody>{rows}</tbody>
 }
 
 const Table = (props) => {
-  
+  const {linkData, removeLink} = props;
     /*TODO - return <table> component, TableHeader and TableBody  and pass props!*/
     return( 
       <table>
         <TableHeader />
-        <TableBody linkData={props.linkData} removeLink={props.handleRemove}/>
+        <TableBody linkData={linkData} removeLink={removeLink}/>
       </table>
     )
   
